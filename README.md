@@ -1,16 +1,19 @@
-MdHighlight
-A Neovim plugin to highlight text between == markers in Markdown, text, and Org files. Supports Pywal color integration, custom colors, and toggleable rendering.
-Features
+# MdHighlight
 
-Highlights text between == (e.g., ==highlighted text==).
-Supports Pywal colors, custom colors, or fallback colors.
-Configurable highlight styles (bold, italic, underline).
-Auto-rendering with toggle and clear commands.
-Keybinds for easy control.
-Works with Markdown, text, and Org files.
+A Neovim plugin to highlight text between `==` markers in Markdown, text, and Org files. Supports Pywal color integration, custom colors, and toggleable rendering.
 
-Installation
-Using Lazy.nvim
+## Features
+- Highlights text between `==` (e.g., `==highlighted text==`).
+- Supports Pywal colors, custom colors, or fallback colors.
+- Configurable highlight styles (bold, italic, underline).
+- Auto-rendering with toggle and clear commands.
+- Keybinds for easy control.
+- Works with Markdown, text, and Org files.
+
+## Installation
+
+### Using [Lazy.nvim](https://github.com/folke/lazy.nvim)
+```lua
 require("lazy").setup({
   {
     "your-username/md-highlight",
@@ -39,8 +42,10 @@ require("lazy").setup({
     event = "VeryLazy",
   },
 })
+```
 
-Using packer.nvim
+### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
+```lua
 use {
   "your-username/md-highlight",
   requires = { "nvim-lua/plenary.nvim" },
@@ -48,9 +53,11 @@ use {
     require("md-highlight").setup()
   end,
 }
+```
 
-Configuration
+## Configuration
 Default configuration:
+```lua
 {
   highlight_group = "MdHighlight",
   pattern = "==[^=]+==", -- Pattern to match text between ==
@@ -81,21 +88,20 @@ Default configuration:
     underline = false,
   },
 }
+```
 
-Commands
+## Commands
+- `:MdHighlightToggle` - Toggle highlighting on/off.
+- `:MdHighlightClear` - Clear all highlights.
+- `:MdHighlightReloadColors` - Reload colors (useful after Pywal changes).
+- `:MdHighlightShowColors` - Show available Pywal colors.
 
-:MdHighlightToggle - Toggle highlighting on/off.
-:MdHighlightClear - Clear all highlights.
-:MdHighlightReloadColors - Reload colors (useful after Pywal changes).
-:MdHighlightShowColors - Show available Pywal colors.
+## Keybinds
+- `<leader>mh`: Toggle highlighting.
+- `<leader>mc`: Clear highlights.
 
-Keybinds
+## Dependencies
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) (required for file operations).
 
-<leader>mh: Toggle highlighting.
-<leader>mc: Clear highlights.
-
-Dependencies
-
-plenary.nvim (required for file operations).
-
-
+## License
+MIT License. See `LICENSE` for details.
