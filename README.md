@@ -16,7 +16,7 @@ A Neovim plugin to highlight text between `==` markers in Markdown, text, and Or
 ```lua
 require("lazy").setup({
   {
-    "your-username/md-highlight",
+    "jbuck95/md-highlight.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("md-highlight").setup({
@@ -47,7 +47,7 @@ require("lazy").setup({
 ### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 ```lua
 use {
-  "your-username/md-highlight",
+  "jbuck95/md-highlight.nvim",
   requires = { "nvim-lua/plenary.nvim" },
   config = function()
     require("md-highlight").setup()
